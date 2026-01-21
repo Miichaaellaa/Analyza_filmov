@@ -1,7 +1,7 @@
 # Analýza filmov
 
 
-Projekt je zameraný na analýzu filmovgit. 
+Projekt je zameraný na analýzu filmov. 
 
 ---
 
