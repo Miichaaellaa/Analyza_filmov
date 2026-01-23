@@ -19,22 +19,32 @@ public class MovieManager {
     }
 
     public List<Movie> searchByActor(String actorName) {
+        if (actorName == null || actorName.trim().isEmpty()) return new ArrayList<>();
+        String searchToken = actorName.trim().toLowerCase();
+
         return movies.stream()
                 .filter(m -> m.getCast() != null && m.getCast().stream()
-                        .anyMatch(a -> a.toLowerCase().contains(actorName.toLowerCase().trim())))
+                        .anyMatch(a -> a.toLowerCase().contains(searchToken)))
                 .collect(Collectors.toList());
     }
 
     public List<Movie> searchByTitle(String titleQuery) {
+        if (titleQuery == null || titleQuery.trim().isEmpty()) return new ArrayList<>();
+        String searchToken = titleQuery.trim().toLowerCase();
+
         return movies.stream()
-                .filter(m -> m.getTitle().toLowerCase().contains(titleQuery.toLowerCase().trim()))
+                .filter(m -> m.getTitle() != null &&
+                        m.getTitle().toLowerCase().contains(searchToken))
                 .collect(Collectors.toList());
     }
 
     public List<Movie> filterByGenreAndYear(String genre, int year) {
+        if (genre == null || genre.trim().isEmpty()) return new ArrayList<>();
+        String searchToken = genre.trim();
+
         return movies.stream()
                 .filter(m -> m.getYear() == year && m.getGenres() != null &&
-                        m.getGenres().stream().anyMatch(g -> g.equalsIgnoreCase(genre)))
+                        m.getGenres().stream().anyMatch(g -> g.equalsIgnoreCase(searchToken)))
                 .collect(Collectors.toList());
     }
 
