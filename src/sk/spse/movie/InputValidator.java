@@ -17,12 +17,12 @@ public class InputValidator {
             try {
                 int value = Integer.parseInt(input);
                 if (value < min || value > max) {
-                    System.out.printf("Zadajte prosím číslo medzi %d a %d!\n", min, max);
+                    System.out.printf("Zadajte prosím číslo medzi %d a %d\n", min, max);
                 } else {
                     return value;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Neplatný formát. Prosím zadajte celé číslo.");
+                System.out.println("Neplatný formát. Skúste zadať celé čísla od 1 do 4.");
             }
         }
     }
@@ -59,17 +59,12 @@ public class InputValidator {
         return getInt(prompt, 1, options);
     }
 
-    public static void waitForEnter() {
-        System.out.print("Stlačte Enter pre pokračovanie...");
-        scanner.nextLine();
-    }
-
     private static boolean containsIllegalChars(String input) {
         if (input.contains("<")) return true;
         if (input.contains(">")) return true;
         if (input.contains("\"")) return true;
         if (input.contains("'")) return true;
-        if (input.contains("&")) return true;
+        if (input.contains("~")) return true;
         if (input.contains(";")) return true;
         if (input.contains("=")) return true;
         if (input.contains("+")) return true;
@@ -78,6 +73,14 @@ public class InputValidator {
         if (input.contains("/")) return true;
         if (input.contains("%")) return true;
         if (input.contains("@")) return true;
+        if (input.contains(":")) return true;
+        if (input.contains("|")) return true;
+        if (input.contains("°")) return true;
+        if (input.contains("ˇ")) return true;
+        if (input.contains("`")) return true;
+        if (input.contains("§")) return true;
+        if (input.contains("^")) return true;
+        if (input.contains("{")) return true;
         return false;
     }
 }
