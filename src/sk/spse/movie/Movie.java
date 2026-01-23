@@ -37,6 +37,14 @@ public class Movie {
     @Override
     public String toString() {
         String castInfo = (cast != null && !cast.isEmpty()) ? String.join(", ", cast) : "neznáme obsadenie";
-        return String.format("Film: %s [%d] | Hrajú: %s", title, year, castInfo);
+        String genreInfo = (genres != null && !genres.isEmpty()) ? String.join(", ", genres) : "bez žánru";
+
+        return String.format(
+                "------------------------------------------\n" +
+                        "NÁZOV: %s (%d)\n" +
+                        "ŽÁNER: %s\n" +
+                        "HRAJÚ: %s\n",
+                title, year, genreInfo, castInfo
+        );
     }
 }

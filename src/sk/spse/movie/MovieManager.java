@@ -21,13 +21,13 @@ public class MovieManager {
     public List<Movie> searchByActor(String actorName) {
         return movies.stream()
                 .filter(m -> m.getCast() != null && m.getCast().stream()
-                        .anyMatch(a -> a.toLowerCase().contains(actorName.toLowerCase())))
+                        .anyMatch(a -> a.toLowerCase().contains(actorName.toLowerCase().trim())))
                 .collect(Collectors.toList());
     }
 
     public List<Movie> searchByTitle(String titleQuery) {
         return movies.stream()
-                .filter(m -> m.getTitle().toLowerCase().contains(titleQuery.toLowerCase()))
+                .filter(m -> m.getTitle().toLowerCase().contains(titleQuery.toLowerCase().trim()))
                 .collect(Collectors.toList());
     }
 
