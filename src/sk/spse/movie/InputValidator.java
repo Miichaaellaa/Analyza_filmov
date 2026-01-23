@@ -59,6 +59,11 @@ public class InputValidator {
         return getInt(prompt, 1, options);
     }
 
+    public static void waitForEnter() {
+        System.out.print("Stlačte Enter pre pokračovanie...");
+        scanner.nextLine();
+    }
+
     private static boolean containsIllegalChars(String input) {
         if (input.contains("<")) return true;
         if (input.contains(">")) return true;
