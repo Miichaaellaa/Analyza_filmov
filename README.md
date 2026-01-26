@@ -1,21 +1,24 @@
 # Analýza filmov
 
-Projekt je zameraný na analýzu filmov.
+Projekt je zameraný na analýzu filmov a prácu s verejnou databázou filmov.
 
 ---
 
 ## Cieľ projektu
+
 Cieľom projektu je:
-- Načítať a spracovať databázu filmov
-- Umožniť vyhľadávanie a filtrovanie filmov podľa mena herca alebo názvu filmu
-- Výpis filmov v danom žánri v danom roku
-- Implementovať stránkovaný výpis výsledkov
+
+* Načítať a spracovať databázu filmov
+* Umožniť vyhľadávanie a filtrovanie filmov podľa mena herca alebo názvu filmu
+* Výpis filmov v danom žánri v danom roku
+* Implementovať stránkovaný výpis výsledkov
 
 ---
 
+## Flowchart – Vyhľadávanie podľa herca
 
-## Flowchart - Vyhľadávanie podľa herca 
-
+```mermaid
+flowchart TD
     A([Začiatok]) --> B[Zadaj meno herca]
     B --> C[Načítaj zoznam filmov]
     C --> D{Existuje ďalší film?}
@@ -27,35 +30,39 @@ Cieľom projektu je:
     D -- Nie --> H([Koniec])
 ```
 
-
-
-
-
-
-
-
 ---
+
 ## Zdroj dát
-Filmy sú načítané z verejného JSON súboru:  
+
+Filmy sú načítané z verejného JSON súboru:
+
+```
 https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json
+```
 
 ---
 
 ## Funkcionality
-- Načítanie filmov z JSON súboru
-- Modelovanie dát pomocou tried:
-    - Movie
-    - InputValidator
-    - TextoveUI
-- Vyhľadávanie filmov:
-    - podľa názvu filmu
-    - podľa herca
-- Výpis filmov:
-    - podľa žánru
-    - podľa roku vydania
-- Stránkovanie výpisu:
-    - po desiatom riadku sa výpis pozastaví
-    - pokračovanie po stlačení Enter klávesy
+
+* Načítanie filmov z JSON súboru
+* Modelovanie dát pomocou tried:
+
+    * `Movie`
+    * `MovieManager`
+    * `InputValidator`
+    * `TextoveUI`
+* Vyhľadávanie filmov:
+
+    * podľa názvu filmu
+    * podľa herca
+* Výpis filmov:
+
+    * podľa žánru
+    * podľa roku vydania
+* Stránkovanie výpisu:
+
+    * po desiatom riadku sa výpis pozastaví
+    * pokračovanie po stlačení klávesy **Enter**
 
 ---
 
@@ -111,3 +118,6 @@ classDiagram
     TextoveUI --> MovieManager : používa
     MovieManager "1" --> "*" Movie : spravuje
     TextoveUI ..> InputValidator : validuje vstup
+```
+
+---
