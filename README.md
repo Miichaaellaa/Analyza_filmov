@@ -13,6 +13,27 @@ Cieľom projektu je:
 
 ---
 
+
+## Flowchart - Vyhľadávanie podľa herca 
+A([Začiatok]) --> B[Zadaj meno herca]
+B --> C[Načítaj zoznam filmov]
+C --> D{Existuje ďalší film?}
+D -- Áno --> E{Obsahuje film herca?}
+E -- Áno --> F[Vypíš film]
+E -- Nie --> G[Preskoč film]
+F --> D
+G --> D
+D -- Nie --> H([Koniec])
+
+
+
+
+
+
+
+
+
+---
 ## Zdroj dát
 Filmy sú načítané z verejného JSON súboru:  
 https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json
