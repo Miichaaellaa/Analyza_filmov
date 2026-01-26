@@ -47,10 +47,10 @@ https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json
 * Načítanie filmov z JSON súboru
 * Modelovanie dát pomocou tried:
 
-    * `Movie`
-    * `MovieManager`
-    * `InputValidator`
-    * `TextoveUI`
+    * Movie
+    * MovieManager
+    * InputValidator
+    * TextoveUI
 * Vyhľadávanie filmov:
 
     * podľa názvu filmu
