@@ -15,8 +15,7 @@ Cieľom projektu je:
 
 
 ## Flowchart - Vyhľadávanie podľa herca 
-```mermaid
-flowchart TD
+
     A([Začiatok]) --> B[Zadaj meno herca]
     B --> C[Načítaj zoznam filmov]
     C --> D{Existuje ďalší film?}
