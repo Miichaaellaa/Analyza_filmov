@@ -1,0 +1,75 @@
+/* Základ okna */
+.root {
+    -fx-background-color: #121212;
+    -fx-font-family: "Segoe UI", Arial;
+}
+
+/* Nadpisy */
+.label {
+    -fx-text-fill: #E0E0E0;
+}
+
+/* Tabuľka - moderný vzhľad bez mriežky */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: #1F1F1F;
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #BB86FC; /* Fialová farba pre nadpisy stĺpcov */
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #1A1A1A;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #121212;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #3700B3;
+}
+
+/* Tlačidlá - Material Design štýl */
+.button {
+    -fx-background-color: #BB86FC;
+    -fx-text-fill: black;
+    -fx-background-radius: 4;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+}
+
+.button:hover {
+    -fx-background-color: #D7B7FD;
+}
+
+/* Vstupné polia (TextField) */
+.text-field {
+    -fx-background-color: #2C2C2C;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #888888;
+    -fx-border-color: #BB86FC;
+    -fx-border-width: 0 0 2 0; /* Len spodná čiara */
+}
+
+/* Záložky (Tabs) */
+.tab-pane .tab-header-area .tab {
+    -fx-background-color: #1F1F1F;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #BB86FC;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: black;
+}
