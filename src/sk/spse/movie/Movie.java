@@ -34,17 +34,16 @@ public class Movie {
         return genres;
     }
 
+    public String getGenresString() {
+        return (genres != null) ? String.join(", ", genres) : "";
+    }
+
+    public String getCastString() {
+        return (cast != null) ? String.join(", ", cast) : "";
+    }
+
     @Override
     public String toString() {
-        String castInfo = (cast != null && !cast.isEmpty()) ? String.join(", ", cast) : "neznáme obsadenie";
-        String genreInfo = (genres != null && !genres.isEmpty()) ? String.join(", ", genres) : "bez žánru";
-
-        return String.format(
-                "------------------------------------------\n" +
-                        "NÁZOV: %s (%d)\n" +
-                        "ŽÁNER: %s\n" +
-                        "HRAJÚ: %s\n",
-                title, year, genreInfo, castInfo
-        );
+        return String.format("%s (%d)", title, year);
     }
 }
