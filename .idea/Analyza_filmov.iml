@@ -18,5 +18,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="openjfx.javafx.fxml" level="project" />
+    <orderEntry type="library" name="openjfx.javafx.controls" level="project" />
   </component>
 </module>
