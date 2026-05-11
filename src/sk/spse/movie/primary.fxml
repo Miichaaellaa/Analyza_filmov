@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.spse.movie.Controller">
 
     <top>
         <VBox spacing="5">
@@ -28,7 +28,7 @@
             <Label text="FILMOVÁ DATABÁZA">
             </Label>
 
-            <Label text="0 načítaných filmov">
+            <Label fx:id="movieCountLabel" text="Môže to chvíľu trvať, filmy sa načítavajú...">
             </Label>
         </VBox>
     </top>
@@ -46,14 +46,14 @@
 
                     <HBox alignment="CENTER_LEFT" spacing="10">
                         <Label minWidth="100" text="Názov filmu:" />
-                        <TextField promptText="Batman" HBox.hgrow="ALWAYS" />
-                        <Button text="Vyhľadať" />
+                        <TextField fx:id="titleSearchField" promptText="Batman" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="searchTitleBtn" onAction="#searchByTitle" text="Vyhľadať" />
                     </HBox>
 
                     <Separator />
 
-                    <Label />
-                    <TableView VBox.vgrow="ALWAYS">
+                    <Label fx:id="titleResultLabel" />
+                    <TableView fx:id="titleTableView" VBox.vgrow="ALWAYS">
                         <columns>
                             <TableColumn prefWidth="400" text="Názov filmu">
                                 <cellValueFactory><PropertyValueFactory property="title" /></cellValueFactory>
@@ -85,16 +85,16 @@
 
                     <HBox alignment="CENTER_LEFT" spacing="10">
                         <Label minWidth="100" text="Žáner:" />
-                        <ComboBox editable="true" promptText="Vyberte žáner" HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="genreComboBox" editable="true" promptText="Vyberte žáner" HBox.hgrow="ALWAYS" />
                         <Label minWidth="50" text="Rok:" />
-                        <Spinner editable="true" minWidth="100" />
-                        <Button text="Vyhľadať" />
+                        <Spinner fx:id="yearSpinner" editable="true" minWidth="100" />
+                        <Button fx:id="searchGenreYearBtn" onAction="#searchByGenreAndYear" text="Vyhľadať" />
                     </HBox>
 
                     <Separator />
 
-                    <Label />
-                    <TableView VBox.vgrow="ALWAYS">
+                    <Label fx:id="genreYearResultLabel" />
+                    <TableView fx:id="genreYearTableView" VBox.vgrow="ALWAYS">
                         <columns>
                             <TableColumn prefWidth="400" text="Názov filmu">
                                 <cellValueFactory><PropertyValueFactory property="title" /></cellValueFactory>
@@ -126,14 +126,14 @@
 
                     <HBox alignment="CENTER_LEFT" spacing="10">
                         <Label minWidth="100" text="Meno herca:" />
-                        <TextField promptText="Angelina Jolie" HBox.hgrow="ALWAYS" />
-                        <Button text="Vyhľadať" />
+                        <TextField fx:id="actorSearchField" promptText="Angelina Jolie" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="searchActorBtn" onAction="#searchByActor" text="Vyhľadať" />
                     </HBox>
 
                     <Separator />
 
-                    <Label />
-                    <TableView VBox.vgrow="ALWAYS">
+                    <Label fx:id="actorResultLabel" />
+                    <TableView fx:id="actorTableView" VBox.vgrow="ALWAYS">
                         <columns>
                             <TableColumn prefWidth="400" text="Názov filmu">
                                 <cellValueFactory><PropertyValueFactory property="title" /></cellValueFactory>
@@ -163,7 +163,7 @@
                 <Insets bottom="5" left="15" right="15" top="5" />
             </padding>
 
-            <Label />
+            <Label fx:id="statusLabel" />
             <Region HBox.hgrow="ALWAYS" />
         </HBox>
     </bottom>
